@@ -4,6 +4,7 @@
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![Drizzle ORM](https://img.shields.io/badge/Drizzle_ORM-C5F74F?style=for-the-badge&logo=drizzle&logoColor=black)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Bun](https://img.shields.io/badge/Bun-000000?style=for-the-badge&logo=bun&logoColor=white)
 
 Um aplicativo web moderno e seguro para gerenciar suas senhas com facilidade. Construído com as tecnologias mais recentes para garantir performance e segurança.
@@ -38,7 +39,7 @@ Este projeto foi construído utilizando as seguintes tecnologias:
     *   [Better Auth](https://www.better-auth.com/)
 *   **Ferramentas:**
     *   [Bun](https://bun.sh/) como runtime e package manager.
-    *   [PostCSS](https://postcss.org/) para plugins do TailwindCSS
+    *   [TailwindCSS](https://tailwindcss.com/) para estilização moderna e responsiva
 
 ## 🏁 Como Começar
 

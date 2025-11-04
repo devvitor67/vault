@@ -35,10 +35,10 @@ Este projeto foi construído utilizando as seguintes tecnologias:
     *   [Drizzle ORM](https://orm.drizzle.team/)
     *   [SQLite](https://www.sqlite.org/index.html) (para desenvolvimento local)
 *   **Autenticação:**
-    *   [Better Auth](https://www.better-auth.com/).
+    *   [Better Auth](https://www.better-auth.com/)
 *   **Ferramentas:**
     *   [Bun](https://bun.sh/) como runtime e package manager.
-    *   [PostCSS](https://postcss.org/)
+    *   [PostCSS](https://postcss.org/) para plugins do TailwindCSS
 
 ## 🏁 Como Começar
 
@@ -52,11 +52,11 @@ Siga os passos abaixo para configurar e executar o projeto em seu ambiente local
 
 1.  Clone o repositório:
     ```bash
-    git clone https://github.com/seu-usuario/app-gerenciador-senhas.git
+    git clone https://github.com/devvitor/vault.git
     ```
 2.  Navegue até o diretório do projeto:
     ```bash
-    cd app-gerenciador-senhas
+    cd vault
     ```
 3.  Instale as dependências:
     ```bash

@@ -1,4 +1,5 @@
 "use client"
+import { signInAction } from "@/actions/sign-in.action"
 import { signInSchema } from "@/shared/schemas/auth"
 import {
   Button,
@@ -6,7 +7,8 @@ import {
   Form,
   Input,
   Label,
-  TextField
+  TextField,
+  toast
 } from "@heroui/react"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
@@ -24,7 +26,21 @@ export function AuthForm() {
   })
   const registerWithMask = useHookFormMask(form.register)
 
-  const onSubmit = form.handleSubmit(async (data) => {})
+  const onSubmit = form.handleSubmit(async (data) => {
+    const result = await signInAction(data)
+
+    if (!result.success) {
+      toast.danger(result.message, {
+        description: JSON.stringify({
+          code: result.code
+        })
+      })
+      return
+    }
+
+    toast.success("Código enviado com sucesso")
+    return
+  })
 
   return (
     <Form

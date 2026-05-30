@@ -1,5 +1,5 @@
 "use client"
-import { signInSchema } from "@/schemas/auth"
+import { signInSchema } from "@/shared/schemas/auth"
 import {
   Button,
   FieldError,

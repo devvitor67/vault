@@ -7,7 +7,15 @@ export const auth = betterAuth({
   plugins: [
     nextCookies(),
     phoneNumber({
-      sendOTP: () => {}
+      sendOTP: () => {},
+      signUpOnVerification: {
+        getTempEmail: (phoneNumber) => {
+          return `${phoneNumber}@altere-depois.com`
+        },
+        getTempName: (phoneNumber) => {
+          return `usuário-${phoneNumber}`
+        }
+      }
     })
   ]
 })

@@ -19,7 +19,7 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="pt" className={`${inter.variable}`}>
+    <html lang="pt" className={`${inter.className}`}>
       <body>{children}</body>
     </html>
   )

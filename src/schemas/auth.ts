@@ -1,15 +1,10 @@
-import {
-  formatPhone,
-  isValidMobilePhone
-} from "@brazilian-utils/brazilian-utils"
+import { isValidMobilePhone } from "@brazilian-utils/brazilian-utils"
 import { z } from "zod"
 
 export const signInSchema = z.strictObject({
   phone: z
     .string()
-    .trim()
     .nonempty("Campo obrigatório")
-    .transform((phone) => formatPhone(phone))
     .refine(isValidMobilePhone, "Número de telefone inválido"),
   password: z
     .string()

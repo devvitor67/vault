@@ -31,9 +31,7 @@ export function AuthForm() {
 
     if (!result.success) {
       toast.danger(result.message, {
-        description: JSON.stringify({
-          code: result.code
-        })
+        description: result.code
       })
       return
     }

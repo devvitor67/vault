@@ -4,6 +4,7 @@ import {
 } from "@/shared/errors/app.errors"
 import type { auth } from "@/shared/lib/better-auth"
 import type { SignInData } from "@/shared/schemas/auth"
+import { toWhatsappPhone } from "@/shared/utils/format-whatsapp-phone"
 import { APIError } from "better-auth"
 
 export class AuthController {
@@ -12,7 +13,7 @@ export class AuthController {
     try {
       return await this.betterAuthInstance.api.signInPhoneNumber({
         body: {
-          phoneNumber: data.phone,
+          phoneNumber: toWhatsappPhone(data.phone),
           password: data.password
         }
       })

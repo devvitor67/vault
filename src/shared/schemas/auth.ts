@@ -1,4 +1,3 @@
-import { toWhatsappPhone } from "@/shared/utils/format-whatsapp-phone"
 import { isValidMobilePhone } from "@brazilian-utils/brazilian-utils"
 import { z } from "zod"
 
@@ -6,8 +5,7 @@ export const signInSchema = z.strictObject({
   phone: z
     .string()
     .nonempty("Campo obrigatório")
-    .refine(isValidMobilePhone, "Número de telefone inválido")
-    .transform((phone) => toWhatsappPhone(phone)),
+    .refine(isValidMobilePhone, "Número de telefone inválido"),
   password: z
     .string()
     .min(6, "A senha deve conter no mínimo 6 caracteres")

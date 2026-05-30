@@ -24,28 +24,34 @@ export function AuthForm() {
   })
   const registerWithMask = useHookFormMask(form.register)
 
+  const onSubmit = form.handleSubmit(async (data) => {})
+
   return (
-    <Form method="post" className="flex flex-col gap-2 w-full">
-      <TextField>
+    <Form
+      onSubmit={onSubmit}
+      method="post"
+      className="flex flex-col gap-2 w-full">
+      <TextField isInvalid={!!form.formState.errors.phone}>
         <div className="flex flex-col gap-1">
           <Label>Seu número</Label>
-          <Input
-            type="tel"
-            {...registerWithMask("phone", "(99) 99999-9999")}
-            autoFocus
-            placeholder="Ex.: (19) 98312-3965"
-          />
+          <Input type="tel" {...registerWithMask("phone", "(99) 99999-9999")} />
           <FieldError>{form.formState.errors.phone?.message}</FieldError>
         </div>
       </TextField>
-      <TextField>
+      <TextField isInvalid={!!form.formState.errors.password}>
         <div className="flex flex-col gap-1">
           <Label>Sua senha</Label>
-          <Input type="password" placeholder="Mínimo de 6 caracteres" />
+          <Input
+            {...form.register("password")}
+            type="password"
+            placeholder="Mínimo de 6 caracteres"
+          />
           <FieldError>{form.formState.errors.password?.message}</FieldError>
         </div>
       </TextField>
-      <Button className="w-full">Continuar</Button>
+      <Button type="submit" className="w-full">
+        Continuar
+      </Button>
     </Form>
   )
 }
